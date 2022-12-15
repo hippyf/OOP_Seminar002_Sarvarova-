@@ -19,8 +19,9 @@ public class UserService implements DataService {
 
     @Override
     public void createUser(String firstName, String lastName, String patronymic) {
-        Random groupID = new Random();
-        Long id = 1L;
+        Random randomID = new Random();
+        Integer groupID;
+        Long id = 0L;
         for ( User item : this.users) {
             if (item instanceof Student) {
                 if (id < ((Student)(item)).getStudentID()) {
@@ -28,8 +29,9 @@ public class UserService implements DataService {
                 }
             }
         } 
-        this.students.add(new Student(firstName, lastName, patronymic,++id, groupID.nextInt(0, 6)));
-        id = id +1;
+        groupID = randomID.nextInt(1,4);
+        this.users.add(new Student(firstName, lastName, patronymic,++id, groupID));
+        this.students.add(new Student(firstName, lastName, patronymic,id, groupID));
     }
 
     public List<Student> getAllStudents () {

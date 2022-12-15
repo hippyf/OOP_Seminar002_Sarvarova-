@@ -26,4 +26,8 @@ public class Student extends User {
         this.groupID = groupID;
     }
     
+    @Override
+    public String toString() {
+    return "User{firstName = '" + getFirstName() + '\'' + ", lastName = '" + getLastName() + '\'' + ", patronymic = '" + getPatronymic() + '\'' + ", Group Number = '" + getGroupID() + '\'' + '}';
+    }
 }
