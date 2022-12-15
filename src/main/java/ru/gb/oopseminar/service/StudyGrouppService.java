@@ -17,10 +17,6 @@ public class StudyGrouppService implements DataStudyGrouppService {
         }
     }
 
-    public void groupSelection(List<Student> students) {
-        
-    }
-
     @Override
     public StringBuilder getStudyGroup() {
         return this.studyGrouppList;

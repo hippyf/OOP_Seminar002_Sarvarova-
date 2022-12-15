@@ -21,17 +21,15 @@ public class UserService implements DataService {
     public void createUser(String firstName, String lastName, String patronymic) {
         Random randomID = new Random();
         Integer groupID;
-        Long id = 0L;
-        for ( User item : this.users) {
-            if (item instanceof Student) {
-                if (id < ((Student)(item)).getStudentID()) {
-                    id = ((Student)(item)).getStudentID();
-                }
-            }
-        } 
+        Long id = 1L;
+        for (Student item : this.students) {
+            item.setStudentID(id);
+            id++;
+        }
         groupID = randomID.nextInt(1,4);
-        this.users.add(new Student(firstName, lastName, patronymic,++id, groupID));
-        this.students.add(new Student(firstName, lastName, patronymic,id, groupID));
+        this.users.add(new Student(firstName, lastName, patronymic, id, groupID));
+        this.students.add(new Student(firstName, lastName, patronymic, id, groupID));
+
     }
 
     public List<Student> getAllStudents () {

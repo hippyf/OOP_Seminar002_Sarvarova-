@@ -9,7 +9,6 @@ public class StudyGroup {
     public StudyGroup (Teacher teacher, List<Student> students) {
         this.teacher = teacher;
         this.students = students;
-        
     }
 
     public List<Student> getStudents() {

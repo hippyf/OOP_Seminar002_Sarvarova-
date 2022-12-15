@@ -27,4 +27,11 @@ public class StudentView {
         log.info(group.toString());
     }
 }
+
+public void sendOnConsoleStudentsSortByID(List<Student> students) {
+    Logger logger = Logger.getAnonymousLogger();
+    for (Student student : students) {
+        logger.info(student.studentAndGroup());
+    }
+}
 }

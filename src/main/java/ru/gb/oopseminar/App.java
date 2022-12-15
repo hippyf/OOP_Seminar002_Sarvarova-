@@ -18,8 +18,11 @@ public class App {
         controller.showAllStudents();
         System.out.println("СТУДЕНЧЕСКАЯ ГРУППА");
         controller.createStudyGroupp(teacher, students);
-        System.out.println("СОРТИРОВКА");
+        System.out.println("СОРТИРОВКА ПО ФАМИЛИЯМ");
         controller.showSortStudyGroup(students);
+        //Homework
+        System.out.println("СОРТИРОВКА ПО ID");
+        controller.showSortStudentsByID(students);
 
     }
 }

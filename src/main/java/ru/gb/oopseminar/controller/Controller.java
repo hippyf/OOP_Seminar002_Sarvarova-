@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import main.java.ru.gb.oopseminar.data.Student;
+import main.java.ru.gb.oopseminar.data.StudyGroumComparatorByID;
 import main.java.ru.gb.oopseminar.data.Teacher;
 import main.java.ru.gb.oopseminar.data.User;
 import main.java.ru.gb.oopseminar.service.StudyGrouppService;
@@ -56,7 +57,7 @@ public class Controller {
         StringBuilder studyGroup = new StringBuilder(studyGrouppService.getStudyGroup());
         studyGroupView.SendStudyGrouppOnConcole(studyGroup);
     }
-
+// Homework
     public void showSortStudyGroup(List<Student> studentList) {
         Collections.sort(studentList, new Comparator<Student>() {
 
@@ -69,6 +70,11 @@ public class Controller {
             }
         });
         studentView.sendOnConsoleStudents(studentList);
+    }
+
+    public void showSortStudentsByID(List<Student> studentList) {
+        Collections.sort(studentList, new StudyGroumComparatorByID());
+        studentView.sendOnConsoleStudentsSortByID(studentList);
     }
 
 }

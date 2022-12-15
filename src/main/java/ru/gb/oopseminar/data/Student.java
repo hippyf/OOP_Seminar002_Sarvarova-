@@ -30,4 +30,8 @@ public class Student extends User {
     public String toString() {
     return "User{firstName = '" + getFirstName() + '\'' + ", lastName = '" + getLastName() + '\'' + ", patronymic = '" + getPatronymic() + '\'' + ", Group Number = '" + getGroupID() + '\'' + '}';
     }
+
+    public String studentAndGroup() {
+        return "Студент " + getStudentID() + " - Группа " + getGroupID(); 
+    }
 }
