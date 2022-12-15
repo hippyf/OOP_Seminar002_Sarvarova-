@@ -9,11 +9,16 @@ public class StudyGrouppService implements DataStudyGrouppService {
     StringBuilder studyGrouppList = new StringBuilder();
 
     @Override
-    public void createStudyGroupp(Teacher teacher, List<User> students) {
-        this.studyGrouppList.append("Teacher: " + teacher.getTeacherID() + "Students: ");
+    public void createStudyGroupp(Teacher teacher, List<Student> students) {
+        this.studyGrouppList.append("Teacher: " + teacher.getTeacherID() + " Students: ");
         for (User item : students) {
             this.studyGrouppList.append(((Student)(item)).getStudentID());
+            this.studyGrouppList.append(", ");
         }
+    }
+
+    public void groupSelection(List<Student> students) {
+        
     }
 
     @Override

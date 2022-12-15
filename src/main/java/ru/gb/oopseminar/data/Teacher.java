@@ -15,5 +15,4 @@ public class Teacher extends User {
     public void setTeacherID(Long teacherID) {
         this.teacherID = teacherID;
     }
-    
 }
